@@ -57,7 +57,7 @@
 {
     MKLocalSearchRequest *request = [MKLocalSearchRequest new];
     request.naturalLanguageQuery = @"Pizza";
-    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.05,0.05));
+    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.005,0.005));
 
     MKLocalSearch *search = [[MKLocalSearch alloc]initWithRequest:request];
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error)
@@ -96,7 +96,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     Pizzeria *selectedPizzeria = [self.pizzeriasArray objectAtIndex:indexPath.row];
     cell.textLabel.text = selectedPizzeria.mapItem.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.02f mi", selectedPizzeria.distanceFromUser];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.02f km", selectedPizzeria.distanceFromUser];
     return cell;
 }
 

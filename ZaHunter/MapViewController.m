@@ -22,7 +22,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.icon = [self scale:[UIImage imageNamed:@"pizza"] toSize:CGSizeMake(30, 30)];
+    self.icon = [self scale:[UIImage imageNamed:@"pizza"] toSize:CGSizeMake(40, 40)];
     if (self.pizzeriasArray.count >=4)
     {
         for (int i = 0; i < 4; i++)
